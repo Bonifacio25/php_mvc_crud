@@ -4,6 +4,14 @@
     {
         public function index()
         {
-            echo 'teste';
+            try {
+                $colecPostagens = Postagem::selecionaTodos();
+            
+                echo'<pre>';
+                var_dump($colecPostagens);
+
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            } 
         }
     }

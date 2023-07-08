@@ -13,7 +13,6 @@
                 $controller = 'HomeController';
             }
 
-            
             if(!class_exists($controller))
             {
                 $controller = 'ErroController';
