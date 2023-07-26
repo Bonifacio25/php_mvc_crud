@@ -2,8 +2,6 @@
 
     class Postagem
     {
-        private $id;
-
         public static function selecionaTodos()
         {
             $conn = Connection::getConn();
@@ -25,5 +23,16 @@
             }
 
             return $resultado;
+        }
+
+        public static function selecionarPorId($idPost)
+        {
+            $conn = Connection::getConn();
+
+            $sql = "SELECT * FROM postagem WHERE id = :id";
+            $sql = $conn->prepare($sql);
+            $sql->bindValue('');
+            $sql->execute();
+
         }
     }
