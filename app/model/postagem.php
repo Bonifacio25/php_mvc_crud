@@ -19,7 +19,7 @@
 
             if(!$resultado)
             {
-                throw new Exception("Não foi encontrado nenhum registro!");
+                throw new Exception("Não foi encontrado nenhum registro no banco!");
             }
 
             return $resultado;
@@ -31,8 +31,15 @@
 
             $sql = "SELECT * FROM postagem WHERE id = :id";
             $sql = $conn->prepare($sql);
-            $sql->bindValue('');
+            $sql->bindValue(':id', $idPost, PDO::PARAM_INT);
             $sql->execute();
 
+            $resultado = $sql->fetchObject('Postagem');
+
+            if(!$resultado){
+                throw new Exception("Não foi encontrado nenhum registro no banco!");
+            }
+
+            return $resultado;
         }
     }

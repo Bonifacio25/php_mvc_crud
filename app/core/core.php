@@ -8,7 +8,8 @@
             if(isset($urlGet['pagina']))
             {
                 $controller = ucfirst($urlGet['pagina'].'Controller');
-            } else
+            } 
+            else
             {
                 $controller = 'HomeController';
             }
@@ -18,6 +19,15 @@
                 $controller = 'ErroController';
             }
 
-            call_user_func_array(array(new $controller, $acao), array());
+            if(isset($urlGet['id']) && $urlGet['id'] != null)
+            {
+                $id = $urlGet['id'];
+            } 
+            else
+            {
+                $id = array();
+            }
+
+            call_user_func_array(array(new $controller, $acao), array($id));
         }
     }
