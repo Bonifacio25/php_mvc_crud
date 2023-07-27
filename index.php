@@ -8,6 +8,7 @@ require_once 'app/controller/erroController.php';
 require_once 'app/controller/postController.php';
 
 require_once 'app/model/postagem.php';
+require_once 'app/model/comentario.php';
 
 require_once 'vendor/autoload.php';
 

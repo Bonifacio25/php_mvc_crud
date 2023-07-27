@@ -7,6 +7,9 @@
             try {
                 $postagem = Postagem::selecionarPorId($params);
 
+                echo'<pre>';
+                var_dump($postagem);
+
                 $loader = new \Twig\Loader\FilesystemLoader('app/view');
                 $twig = new \Twig\Environment($loader);
                 $template = $twig->load('single.html');
