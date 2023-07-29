@@ -12,7 +12,7 @@
             $sql->execute();
 
             $resultado = array();
-
+            
             while ($row = $sql->fetchObject('Comentario')){
                 $resultado[] = $row;
             }
