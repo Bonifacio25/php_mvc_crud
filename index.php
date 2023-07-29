@@ -7,6 +7,7 @@ require_once 'app/controller/homeController.php';
 require_once 'app/controller/erroController.php';
 require_once 'app/controller/postController.php';
 require_once 'app/controller/sobreController.php';
+require_once 'app/controller/adminController.php';
 
 require_once 'app/model/postagem.php';
 require_once 'app/model/comentario.php';
